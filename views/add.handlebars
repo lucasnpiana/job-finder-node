@@ -1,0 +1,86 @@
+
+<main class="container add-page">
+
+    <div class="add-header">
+        <h1>Abrir uma oportunidade!</h1>
+
+        <p>
+            Preencha os dados da melhor forma possível
+            para encontrar mais rápido seu dev!
+        </p>
+    </div>
+
+    <div class="add-form-card">
+
+        <form action="/jobs/add" method="POST">
+
+            <div class="add-form-group mb-3">
+                <label class="form-label">Título da vaga</label>
+
+                <input type="text" name="title"
+                    class="form-control"
+                    placeholder="Digite o título da vaga"
+                    required>
+
+                <small class="form-hint">
+                    O título é muito importante, seja claro e objetivo.
+                </small>
+            </div>
+
+            <div class="add-form-group mb-3">
+                <label class="form-label">Descrição da vaga</label>
+
+                <textarea name="description"
+                    class="form-control"
+                    placeholder="Descreva as atividades do desenvolvedor..."
+                    required></textarea>
+            </div>
+
+            <div class="add-form-group mb-3">
+                <label class="form-label">Empresa contratante</label>
+
+                <input type="text" name="company"
+                    class="form-control"
+                    placeholder="Digite a empresa que vai contratar"
+                    required>
+            </div>
+
+            <div class="add-form-group mb-3">
+                <label class="form-label">E-mail para contato</label>
+
+                <input type="email" name="email"
+                    class="form-control"
+                    placeholder="Digite o e-mail para contato"
+                    required>
+            </div>
+
+            <div class="add-form-group mb-3">
+                <label class="form-label">Salário oferecido</label>
+
+                <input type="number" name="salary"
+                    class="form-control"
+                    placeholder="Digite o salário da vaga"
+                    min="0"
+                    required>
+            </div>
+
+            <div class="add-form-group mb-4">
+                <label class="form-label">Vaga nova?</label>
+
+                <select name="new_job" class="form-select" required>
+                    <option value="1">Sim</option>
+                    <option value="0">Não</option>
+                </select>
+            </div>
+
+            <div class="add-form-actions">
+                <button type="submit" class="btn btn-primary">
+                    Publicar vaga
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</main>

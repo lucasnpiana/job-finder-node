@@ -1,0 +1,56 @@
+
+<main class="container job-details-page">
+
+    <div class="job-details-card">
+
+        <a href="/" class="back-link">
+            ← Voltar para as vagas
+        </a>
+
+        <div class="job-details-header">
+
+            <div>
+                <p class="job-company">{{job.company}}</p>
+
+                <h1>{{job.title}}</h1>
+
+                <p class="job-salary">
+                    Salário: R$ {{job.salary}}
+                </p>
+            </div>
+
+            {{#if job.new_job}}
+                <span class="new-job-label">NOVA</span>
+            {{/if}}
+
+        </div>
+
+        <hr>
+
+        <section class="job-description">
+            <h2>Descrição da vaga</h2>
+
+            <p>{{job.description}}</p>
+        </section>
+
+        <hr>
+
+        <section class="job-contact">
+            <h2>Informações de contato</h2>
+
+            <p>
+                <strong>Empresa:</strong> {{job.company}}
+            </p>
+
+            <p>
+                <strong>E-mail:</strong> {{job.email}}
+            </p>
+        </section>
+
+        <a href="mailto:{{job.email}}" class="btn btn-primary">
+            Candidatar-se
+        </a>
+
+    </div>
+
+</main>

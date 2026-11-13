@@ -1,0 +1,110 @@
+
+<section class="hero">
+    <div class="container">
+
+        <h1>Encontre o emprego dos seus sonhos</h1>
+
+        <p>
+            Somos o site com mais vagas de tecnologia no mercado,
+            direcionadas a home office.
+        </p>
+
+        <!-- search -->
+        <form class="search-form" role="search" action="/" method="GET">
+
+            <input
+                type="search"
+                name="job"
+                value="{{search}}"
+                placeholder="Digite a vaga que está buscando"
+                aria-label="Buscar vaga">
+
+            <button type="submit" class="btn btn-primary">
+                Procurar
+            </button>
+
+        </form>
+
+    </div>
+</section>
+
+<!-- jobs -->
+<main id="vagas">
+
+    <div id="jobs-container" class="container">
+
+        <h2 class="section-title">
+            Veja as nossas vagas em destaque
+        </h2>
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <ul id="job-list" class="list-group">
+
+                    {{#each jobs}}
+
+                        <li class="list-group-item {{#if this.new_job}}new-job{{/if}}">
+
+                            <!-- company image -->
+                            <img
+                                src="/img/company.png"
+                                alt="Empresa de tecnologia">
+
+                            <!-- job information -->
+                            <div class="job-info">
+
+                                <p>{{this.company}}</p>
+
+                                <h2>{{this.title}}</h2>
+
+                                <p>R$ {{this.salary}}</p>
+
+                            </div>
+
+                            <!-- new job label -->
+                            {{#if this.new_job}}
+                                <span class="new-job-label">
+                                    NOVA
+                                </span>
+                            {{/if}}
+
+                            <!-- view job -->
+                            <a
+                                href="/jobs/{{this.id}}"
+                                class="btn btn-primary">
+                                Ver vaga
+                            </a>
+
+                            <!-- delete job -->
+                            <form
+                                action="/jobs/delete/{{this.id}}"
+                                method="POST"
+                                onsubmit="return confirm('Deseja realmente excluir esta vaga?')">
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-danger">
+                                    Excluir
+                                </button>
+
+                            </form>
+
+                        </li>
+
+                    {{else}}
+
+                        <li class="list-group-item">
+                            <p>Nenhuma vaga encontrada.</p>
+                        </li>
+
+                    {{/each}}
+
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+
+</main>

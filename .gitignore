@@ -1,2 +1,15 @@
+# dependencies
 node_modules/
+
+# environment
 .env
+
+# database
+db/app.db
+
+# logs
+*.log
+
+# system
+.DS_Store
+Thumbs.db
